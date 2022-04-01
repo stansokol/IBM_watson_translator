@@ -8,7 +8,6 @@ from pandas import json_normalize
 
 
 
-apikey = 'zMhOE0RWG0m2zdHwCkTOTTxdc9Sm78DjMUPNZOScyCt8'
 url = 'https://api.eu-gb.language-translator.watson.cloud.ibm.com'
 version_lt = '2018-05-01'
 authenticator = IAMAuthenticator(apikey)
