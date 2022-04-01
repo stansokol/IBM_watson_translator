@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='calculator.css') }}"/>
+</head>
+<body>
+    <h1>Text translator</h1>
+    <form method="post" action="{{ url_for('operation_result') }}" id="calculator_form">
+        <label for="Input1">Phrase to translate:</label>
+        <input type="text" name="Input1" id="Input1">
+        <br/>
+        <!-- <label for="Input2">Input2:</label>
+        <input type="Input2" name="Input2" id="Input2"> -->
+        <br/>
+        <label for="operation">Operation</label>
+        <select id="operation" name="operation">
+            <option value="fr">Translate to French</option>
+            <option value="en">Translate to English</option>
+        </select>
+        <br/>
+        <input type="submit" value="Submit"/>
+        <input type="reset"  value="RESET" style="color: red;"/>
+    </form>
+    {% if calculation_success == True %}
+        <br/>
+        <p>The translation {{input1}} {{operation}} is: {{result}}</p>
+    {% endif %}
+    {% if calculation_success == False %}
+        <br/>
+        <p>{{error}}</p>
+        <p>{{input1}} {{operation}} = "{{result}}"</p>
+    {% endif %}
+</body>
+</html>
